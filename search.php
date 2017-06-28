@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-<div class="row">
-	<section class="medium-12 columns primary content-area">
+<div class="grid-container">
+	<section class="cell medium-12 columns primary content-area">
 		<?php
 		if ( have_posts() ) : ?>
 			<header class="page-header">
@@ -33,6 +33,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
 	</section><!-- .primary -->
-</div><!-- .row -->
+</div><!-- .grid-container -->
 
 <?php get_footer(); ?>

@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="medium-12 columns primary content-area ">
+<div class="grid-container">
+	<div class="cell medium-12 primary content-area ">
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/content', 'page' );
@@ -27,6 +27,6 @@ get_header(); ?>
 		endwhile; // End of the loop.
 		?>
 	</div><!-- .primary -->
-</div><!-- .row -->
+</div><!-- .grid-container -->
 
 <?php get_footer(); ?>

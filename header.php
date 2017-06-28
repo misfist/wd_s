@@ -26,10 +26,10 @@
 <div id="page" class="site">
 	<a class="skip-link show-for-sr" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header class="align-middle site-header">
+	<header class="grid-container align-middle site-header">
 
-		<div class="row">
-			<div class="column small-6 medium-2 site-branding">
+		<div class="grid-x">
+			<div class="cell small-6 medium-2 cell site-branding">
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
@@ -46,12 +46,12 @@
 				<?php endif; ?>
 			</div><!-- . site-branding -->
 
-			<span class="column small-6 medium-10 hamburger text-right" data-responsive-toggle="main-site-navigation" data-hide-for="large">
+			<span class="cell small-6 medium-10 hamburger text-right" data-responsive-toggle="main-site-navigation" data-hide-for="large">
 				<button class="hamburger-icon" type="button" data-toggle="off-canvas-menu"></button>
 				<div class="title-bar-title show-for-sr"><?php esc_html_e( 'Menu', '_s' ); ?></div>
 			</span>
 
-			<nav id="main-site-navigation" class="column small-6 medium-7">
+			<nav id="main-site-navigation" class="cell small-6 medium-7">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
@@ -63,10 +63,10 @@
 				?>
 			</nav><!-- #main-site-navigation -->
 
-			<div class="column hide-for-small-only hide-for-medium-only medium-3 align-right">
+			<div class="cell hide-for-small-only hide-for-medium-only medium-3 align-right">
 				<?php get_search_form(); ?>
 			</div>
-		</div><!-- .row -->
+		</div><!-- .grid-x -->
 	</header><!-- .site-header -->
 
 	<main id="main" class="site-main" role="main">

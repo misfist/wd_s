@@ -9,23 +9,25 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="small-12 medium-9 columns primary content-area">
-		<?php
-		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/content', get_post_format() );
+<div class="grid-container">
+	<div class="grid-x">
+		<div class="cell small-12 medium-9 primary content-area">
+			<?php
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts/content', get_post_format() );
 
-			the_post_navigation();
+				the_post_navigation();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-		endwhile; // End of the loop.
-		?>
-	</div><!-- .primary -->
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			endwhile; // End of the loop.
+			?>
+		</div><!-- .primary -->
 
-	<?php get_sidebar(); ?>
-</div><!-- .row -->
+		<?php get_sidebar(); ?>
+	</div><!-- .grid-x -->
+</div><!-- .grid-container -->
 
 <?php get_footer(); ?>

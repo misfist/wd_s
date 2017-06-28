@@ -15,29 +15,29 @@
 	</main><!-- #main -->
 
 	<footer class="site-footer">
-		<div class="row small-up-1 medium-up-2 large-up-4">
-			<div class="column">
+		<div class="grid-container small-up-1 medium-up-2 large-up-4">
+			<div class="cell">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</div>
 
-			<div class="column">
+			<div class="cell">
 				<?php dynamic_sidebar( 'footer-2' ); ?>
 			</div>
 
-			<div class="column">
+			<div class="cell">
 				<?php dynamic_sidebar( 'footer-3' ); ?>
 			</div>
 
-			<div class="column">
+			<div class="cell">
 				<?php dynamic_sidebar( 'footer-4' ); ?>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="grid-container">
 			<div class="small-12 site-info text-center">
 				<?php _s_display_copyright_text(); ?>
 			</div>
-		</div><!-- .row -->
+		</div><!-- .grid-container -->
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
