@@ -175,3 +175,8 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Scaffolding Library.
  */
 require get_template_directory() . '/inc/scaffolding.php';
+
+/**
+ * Scaffolding Library.
+ */
+require get_template_directory() . '/inc/class-wds-minify-html.php';
