@@ -1,8 +1,8 @@
 <?php
 /**
- * Block Name: Testimonial
+ * The template used for displaying a testimonial.
  *
- * This is the template that displays the testimonial block.
+ * @package _s
  */
 
 // Set up fields.
