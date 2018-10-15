@@ -364,7 +364,7 @@ function _s_acf_init() {
 			'name'            => 'testimonial',
 			'title'           => esc_html__( 'Testimonial', '_s' ),
 			'description'     => esc_html__( 'A custom testimonial block.', '_s' ),
-			'render_callback' => '_s_bock_render_callback',
+			'render_callback' => '_s_block_render_callback',
 			'category'        => 'formatting',
 			'icon'            => 'admin-comments',
 			'keywords'        => array( 'testimonial', 'quote' ),
@@ -378,13 +378,11 @@ add_action( 'acf/init', '_s_acf_init' );
  *
  * @param string $block The name of the block.
  */
-function _s_bock_render_callback( $block ) {
+function _s_block_render_callback( $block ) {
 
 	// Convert name ("acf/testimonial") into path friendly slug ("testimonial").
 	$slug = str_replace( 'acf/', '', $block['name'] );
 
-	// Include a template part from within the "template-parts/block" folder.
-	if ( file_exists( get_stylesheet_directory() . '/template-parts/block/content-{$slug}.php' ) ) {
-		include get_stylesheet_directory() . '/template-parts/block/content-{$slug}.php';
-	}
+	// Include template part.
+	get_template_part( 'template-parts/blocks/content-' . $slug );
 }
