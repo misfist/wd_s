@@ -350,3 +350,41 @@ if ( function_exists( '_s_acf_flexible_content_layout_title' ) ) {
 	}
 	add_action( 'acf/input/admin_head', '_s_flexible_content_layout_title_acf_admin_head' );
 }
+
+/**
+ * Register an ACF Block.
+ */
+function _s_acf_init() {
+
+	// Check function exists.
+	if ( function_exists( 'acf_register_block' ) ) {
+
+		// Register a testimonial block.
+		acf_register_block( array(
+			'name'            => 'testimonial',
+			'title'           => esc_html__( 'Testimonial', '_s' ),
+			'description'     => esc_html__( 'A custom testimonial block.', '_s' ),
+			'render_callback' => '_s_bock_render_callback',
+			'category'        => 'formatting',
+			'icon'            => 'admin-comments',
+			'keywords'        => array( 'testimonial', 'quote' ),
+		) );
+	}
+}
+add_action( 'acf/init', '_s_acf_init' );
+
+/**
+ * Find a template and render ACF Block markup.
+ *
+ * @param string $block The name of the block.
+ */
+function _s_bock_render_callback( $block ) {
+
+	// Convert name ("acf/testimonial") into path friendly slug ("testimonial").
+	$slug = str_replace( 'acf/', '', $block['name'] );
+
+	// Include a template part from within the "template-parts/block" folder.
+	if ( file_exists( get_stylesheet_directory() . '/template-parts/block/content-{$slug}.php' ) ) {
+		include get_stylesheet_directory() . '/template-parts/block/content-{$slug}.php';
+	}
+}
