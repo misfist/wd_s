@@ -13,7 +13,7 @@ $bg_color    = get_field( 'background_color' );
 $text_color  = get_field( 'text_color' );
 ?>
 
-<blockquote class="testimonial">
+<blockquote id="testimonial-<?php echo esc_attr( $block['id'] ); ?>"  class="testimonial">
 	<p><?php echo wp_kses_post( $testimonial ); ?></p>
 	<cite>
 		<img class="avatar" src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $author ); ?>" />
