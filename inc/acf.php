@@ -383,6 +383,9 @@ function _s_block_render_callback( $block ) {
 	// Convert name ("acf/testimonial") into path friendly slug ("testimonial").
 	$slug = str_replace( 'acf/', '', $block['name'] );
 
-	// Include template part.
-	get_template_part( 'template-parts/blocks/content-' . $slug );
+	// Include a template part from within the "template-parts/block" folder.
+	// Note: Using PHP file include vs. get_template_part() allows us to pass $block to the template file.
+	if ( file_exists( get_stylesheet_directory() . "/template-parts/blocks/content-{$slug}.php" ) ) {
+		include get_stylesheet_directory() . "/template-parts/blocks/content-{$slug}.php";
+	}
 }
