@@ -327,3 +327,27 @@ function _s_remove_archive_title_prefix( $title ) {
 	return $title;
 }
 add_filter( 'get_the_archive_title', '_s_remove_archive_title_prefix' );
+
+
+
+/**
+ * Adds Gutenberg Blocks with ACF.
+ *
+ * @return void
+ */
+function _s_register_acf_gutenberg_blocks() {
+	if ( function_exists( 'acf_register_block' ) ) {
+		// Register the hero block.
+		acf_register_block(array(
+			'name'            => 'hero',
+			'title'           => __( 'Hero', '_s' ),
+			'description'     => __( 'A hero block.', '_s' ),
+			'render_template' => get_template_directory() . '/template-parts/gutenberg/hero.php',
+			'category'        => 'layout',
+			'icon'            => 'slides',
+			'mode'            => 'preview',
+			'keywords'        => array( 'hero', 'slider' ),
+		));
+	}
+}
+add_action( 'acf/init', '_s_register_acf_gutenberg_blocks' );
