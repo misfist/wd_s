@@ -137,7 +137,9 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Load styles and scripts.
