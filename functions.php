@@ -152,7 +152,7 @@ require get_template_directory() . '/inc/acf.php';
 /**
  * Load custom ACF search functionality.
  */
-require get_template_directory() . '/inc/acf-search.php';
+require get_template_directory() . '/inc/acf-algolia.php';
 
 /**
  * Load custom filters and hooks.
