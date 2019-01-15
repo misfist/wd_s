@@ -1,11 +1,16 @@
 <?php
 /**
- * ACF + Alogolia
+ * ACF flexible content + Alogolia
  *
- * Point ACF flexible content fields at Alogolia search.
+ * Allow ACF flexible content fields to be indexed by Alogolia search.
+ * Requires: https://wordpress.org/plugins/search-by-algolia-instant-relevant-results/
  *
  * @package _s
  */
+
+if ( ! defined( 'ALGOLIA_PATH' ) ) {
+	exit();
+}
 
 /**
  * Setup flexible content fields.
