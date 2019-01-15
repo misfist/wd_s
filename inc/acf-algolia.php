@@ -16,7 +16,7 @@
  */
 function _s_update_acf_index_settings( $settings ) {
 
-	// Define all the flexible content layouts.
+	// Define flexible content layouts.
 	$layouts = array(
 		'accordion',
 		'carousel',
@@ -37,7 +37,7 @@ add_filter( 'algolia_searchable_posts_index_settings', '_s_update_acf_index_sett
 add_filter( 'algolia_posts_page_index_settings', '_s_update_acf_index_settings' );
 
 /**
- * Updates post attributes for ACF.
+ * Add field data to Algolia indicies.
  *
  * @param array   $attributes post attributes.
  * @param WP_Post $post post object.
@@ -46,7 +46,7 @@ add_filter( 'algolia_posts_page_index_settings', '_s_update_acf_index_settings' 
  */
 function _s_updates_acf_post_attributes( array $attributes, WP_Post $post ) {
 
-	// Only index if we're using an ACF template.
+	// Only if we're using an ACF template.
 	if ( 'template-acf.php' !== get_page_template_slug( $post->ID ) ) {
 		return $attributes;
 	}
@@ -54,12 +54,12 @@ function _s_updates_acf_post_attributes( array $attributes, WP_Post $post ) {
 	// Grab the flexible content fields IDs.
 	$flexible_content = get_field( 'content_blocks', $post->ID );
 
-	// For each flexible content fields.
+	// Loop through flexible content fields.
 	foreach ( $flexible_content as $item ) :
 
 		$layout = $item['acf_fc_layout'];
 
-		// For each flexible content field item, index the content.
+		// Add field content to Alogolia indicies.
 		switch ( $layout ) {
 			case 'accordion':
 				$attributes[ $layout ]['title'] = $item['title'];
