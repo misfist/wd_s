@@ -9,7 +9,7 @@
 
 // If ACF isn't activated, then bail.
 if ( ! class_exists( 'acf' ) ) {
-	return false;
+	exit();
 }
 
 /**
