@@ -144,20 +144,25 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/scripts.php';
 
-/**
- * Load custom ACF features.
- */
-require get_template_directory() . '/inc/acf.php';
+if ( defined( 'ACF_PATH' ) ) {
 
-/**
- * Load custom ACF search functionality.
- */
-require get_template_directory() . '/inc/acf-search.php';
+	/**
+	 * Load custom ACF features.
+	 */
+	require get_template_directory() . '/inc/acf.php';
 
-/**
- * Load Alogolia search functionality.
- */
-require get_template_directory() . '/inc/acf-algolia.php';
+	/**
+	 * Load custom ACF search functionality.
+	 */
+	require get_template_directory() . '/inc/acf-search.php';
+}
+
+if ( defined( 'ALGOLIA_PATH' ) ) {
+	/**
+	 * Load Alogolia search functionality.
+	 */
+	require get_template_directory() . '/inc/acf-algolia.php';
+}
 
 /**
  * Load custom filters and hooks.
