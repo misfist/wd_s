@@ -8,12 +8,8 @@
  * @package _s
  */
 
-if ( ! defined( 'ALGOLIA_PATH' ) ) {
-	exit();
-}
-
 /**
- * Setup flexible content fields.
+ * Make flexible content fields searchable.
  *
  * @param array $settings settings array from API.
  *
@@ -30,9 +26,10 @@ function _s_update_acf_index_settings( $settings ) {
 		'fifty_fifty_block',
 	);
 
-	// Add fields to the settings array.
+	// Add layouts to indicies.
 	foreach ( $layouts as $layout ) {
-		$settings['attributesToIndex'][] = 'unordered(' . $layout . ')';
+		$settings['attributesToIndex'][]    = 'unordered(' . $layout . ')';
+		$settings['attributesToSnippet'][]  = $layout . ':30';
 	}
 
 	// Return settings.
@@ -42,7 +39,7 @@ add_filter( 'algolia_searchable_posts_index_settings', '_s_update_acf_index_sett
 add_filter( 'algolia_posts_page_index_settings', '_s_update_acf_index_settings' );
 
 /**
- * Add field data to Algolia indicies.
+ * Send field data to Algolia indicies.
  *
  * @param array   $attributes post attributes.
  * @param WP_Post $post post object.
