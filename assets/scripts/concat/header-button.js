@@ -51,7 +51,7 @@ window.ShowHideSearchForm = {};
 		app.$c.body.toggleClass( 'search-form-visible' );
 
 		app.toggleSearchFormAriaLabel();
-		app.toggleSearchFormAriaLabel();
+		app.toggleSearchToggleAriaLabel();
 
 		return false;
 	};
@@ -62,7 +62,7 @@ window.ShowHideSearchForm = {};
 		if ( ! $( event.target ).parents( 'div' ).hasClass( 'site-header-action' ) ) {
 			app.$c.body.removeClass( 'search-form-visible' );
 			app.toggleSearchFormAriaLabel();
-			app.toggleSearchFormAriaLabel();
+			app.toggleSearchToggleAriaLabel();
 		}
 	};
 
@@ -72,7 +72,7 @@ window.ShowHideSearchForm = {};
 	};
 
 	// Toggles the aria-hidden label on the toggle button.
-	app.toggleSearchFormAriaLabel = function() {
+	app.toggleSearchToggleAriaLabel = function() {
 		app.$c.headerSearchToggle.attr( 'aria-expanded', app.searchIsOpen() ? 'true' : 'false' );
 	};
 
