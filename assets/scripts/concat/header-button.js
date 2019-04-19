@@ -51,6 +51,7 @@ window.ShowHideSearchForm = {};
 		app.$c.body.toggleClass( 'search-form-visible' );
 
 		app.toggleSearchFormAriaLabel();
+		app.toggleSearchFormAriaLabel();
 
 		return false;
 	};
@@ -61,12 +62,18 @@ window.ShowHideSearchForm = {};
 		if ( ! $( event.target ).parents( 'div' ).hasClass( 'site-header-action' ) ) {
 			app.$c.body.removeClass( 'search-form-visible' );
 			app.toggleSearchFormAriaLabel();
+			app.toggleSearchFormAriaLabel();
 		}
 	};
 
 	// Toggles the aria-hidden label on the form container.
 	app.toggleSearchFormAriaLabel = function() {
 		app.$c.headerSearchForm.attr( 'aria-hidden', app.searchIsOpen() ? 'false' : 'true' );
+	};
+
+	// Toggles the aria-hidden label on the toggle button.
+	app.toggleSearchFormAriaLabel = function() {
+		app.$c.headerSearchToggle.attr( 'aria-expanded', app.searchIsOpen() ? 'true' : 'false' );
 	};
 
 	// Engage
