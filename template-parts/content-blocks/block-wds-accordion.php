@@ -6,20 +6,23 @@
  */
 
 // Set up fields.
-$block_title     = get_sub_field( 'title' );
-$text            = get_sub_field( 'text' );
-$accordion_items = get_sub_field( 'accordion_items' );
+$block_title     = get_field( 'title' );
+$text            = get_field( 'text' );
+$accordion_items = get_field( 'accordion_items' );
 $row_index       = get_row_index();
+$alignment       = _s_get_block_alignment( $block );
+$classes         = _s_get_block_classes( $block );
 
 // Start a <container> with possible block options.
 _s_display_block_options(
 	array(
+		'block'     => $block,
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block accordion-block', // Container class.
+		'class'     => 'content-block accordion-block' . esc_attr( $alignment . $classes ), // Container class.
 	)
 );
 ?>
-	<div class="container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+	<div class="container">
 		<?php if ( $block_title ) : ?>
 			<h2 class="block-title"><?php echo esc_html( $block_title ); ?></h2>
 		<?php endif; ?>
@@ -48,13 +51,13 @@ _s_display_block_options(
 										<span class="accordion-item-toggle-icon" aria-hidden="true">+</span>
 									</button>
 								</h3>
-							</div><!-- .accordion-item-header-->
+							</div>
 							<div id="<?php echo esc_attr( $item_content_id ); ?>" class="accordion-item-content" aria-hidden="true">
 								<?php echo _s_get_the_content( $item_content ); // phpcs: xss: ok. ?>
-							</div><!-- .accordion-item-content -->
+							</div>
 						</div>
 				<?php endwhile; ?>
-			</div><!-- .accordion -->
+			</div>
 		<?php endif; ?>
-	</div><!-- .container -->
-</section><!-- .accordion-block -->
+	</div>
+</section>

@@ -1,12 +1,12 @@
 {
-    "key": "group_596e6776dab80",
-    "title": "Block: Fifty\/Fifty Block — To Clone",
+    "key": "group_5cc9cd6557352",
+    "title": "Block: Fifty\/Fifty",
     "fields": [
         {
-            "key": "field_59416beff0b0b",
-            "label": "Block Content",
+            "key": "field_5d694a1bdcd07",
+            "label": "",
             "name": "",
-            "type": "tab",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,11 +15,29 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "message": "<h2>Fifty\/Fifty<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc9cd655d984",
+            "label": "Block Content",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
-            "key": "field_59089fd63f35f",
+            "key": "field_5cc9cd655d995",
             "label": "Block layout:",
             "name": "block_layout",
             "type": "select",
@@ -47,7 +65,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5908a2874dd20",
+            "key": "field_5cc9cd655d9a4",
             "label": "Left Side Image",
             "name": "media_left",
             "type": "image",
@@ -56,7 +74,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "media_text"
                     }
@@ -79,7 +97,7 @@
             "mime_types": "jpg, jpeg, png, gif"
         },
         {
-            "key": "field_596e6ed60914d",
+            "key": "field_5cc9cd655d9b2",
             "label": "Text (Primary)",
             "name": "text_primary",
             "type": "wysiwyg",
@@ -88,21 +106,21 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "media_text"
                     }
                 ],
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "text_media"
                     }
                 ],
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "text_text"
                     }
@@ -113,23 +131,23 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Primary Text content",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
         },
         {
-            "key": "field_596e6f4409150",
+            "key": "field_5cc9cd655d9c1",
             "label": "Text (Secondary)",
             "name": "text_secondary",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Secondary Text content",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "text_text"
                     }
@@ -147,7 +165,7 @@
             "delay": 0
         },
         {
-            "key": "field_5908a2174dd1d",
+            "key": "field_5cc9cd655d9d0",
             "label": "Right Side Image",
             "name": "media_right",
             "type": "image",
@@ -156,7 +174,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_59089fd63f35f",
+                        "field": "field_5cc9cd655d995",
                         "operator": "==",
                         "value": "text_media"
                     }
@@ -177,14 +195,77 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "jpg, jpeg, png, gif"
+        },
+        {
+            "key": "field_5cc9cd7d085de",
+            "label": "Background Options",
+            "name": "background_options",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_58ebcc07bfbd7"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5cc9cd8c085df",
+            "label": "Display Options",
+            "name": "display_options",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5c1418a5dcaec"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5cc9cd98085e0",
+            "label": "Other Options",
+            "name": "other_options",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_594168e970d85"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
+                "value": "acf\/wds-fifty-fifty"
             }
         ]
     ],
@@ -194,7 +275,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 0,
+    "active": 1,
     "description": "",
-    "modified": 1551452504
+    "modified": 1567181459
 }

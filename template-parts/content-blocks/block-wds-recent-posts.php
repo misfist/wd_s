@@ -10,10 +10,12 @@
  */
 
 // Set up fields.
-$block_title = get_sub_field( 'title' );
-$post_count  = get_sub_field( 'number_of_posts' );
-$categories  = get_sub_field( 'categories' );
-$tags        = get_sub_field( 'tags' );
+$block_title = get_field( 'title' );
+$post_count  = get_field( 'number_of_posts' );
+$categories  = get_field( 'categories' );
+$tags        = get_field( 'tags' );
+$alignment   = _s_get_block_alignment( $block );
+$classes     = _s_get_block_classes( $block );
 
 // Variable to hold query args.
 $args = array();
@@ -35,8 +37,9 @@ if ( $recent_posts->have_posts() ) :
 	// Start a <container> with possible block options.
 	_s_display_block_options(
 		array(
+			'block'     => $block,
 			'container' => 'section', // Any HTML5 container: section, div, etc...
-			'class'     => 'content-block recent-posts-block', // Container class.
+			'class'     => 'content-block recent-posts-block' . esc_attr( $alignment . $classes ), // Container class.
 		)
 	);
 	?>
@@ -47,7 +50,7 @@ if ( $recent_posts->have_posts() ) :
 			<?php endif; ?>
 		</div>
 
-		<div class="container display-flex<?php echo esc_attr( _s_get_animation_class() ); ?>">
+		<div class="container display-flex">
 
 			<?php
 			// Loop through recent posts.
@@ -73,6 +76,6 @@ if ( $recent_posts->have_posts() ) :
 			endwhile;
 			wp_reset_postdata();
 			?>
-		</div><!-- .container -->
-	</section><!-- .recent-posts -->
+		</div>
+	</section>
 <?php endif; ?>

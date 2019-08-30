@@ -6,18 +6,20 @@
  */
 
 // Set up fields.
-$image_data = get_sub_field( 'media_right' );
-$text       = get_sub_field( 'text_primary' );
+global $fifty_block, $fifty_alignment, $fifty_classes;
+$image_data = get_field( 'media_right' );
+$text       = get_field( 'text_primary' );
 
 // Start a <container> with a possible media background.
 _s_display_block_options(
 	array(
+		'block'     => $fifty_block,
 		'container' => 'section', // Any HTML5 container: section, div, etc...
-		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-media', // Container class.
+		'class'     => 'content-block grid-container fifty-fifty-block fifty-text-media' . esc_attr( $fifty_alignment . $fifty_classes ), // Container class.
 	)
 );
 ?>
-	<div class="display-flex container<?php echo esc_attr( _s_get_animation_class() ); ?>">
+	<div class="display-flex container">
 
 		<div class="half">
 			<?php echo _s_get_the_content( $text ); // WPCS: XSS OK. ?>
@@ -27,5 +29,5 @@ _s_display_block_options(
 			<img class="fifty-media-image" src="<?php echo esc_url( $image_data['url'] ); ?>" alt="<?php echo esc_html( $image_data['alt'] ); ?>">
 		</div>
 
-	</div><!-- .container -->
-</section><!-- .fifty-text-media -->
+	</div>
+</section>

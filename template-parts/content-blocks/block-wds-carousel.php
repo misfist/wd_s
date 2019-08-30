@@ -5,15 +5,16 @@
  * @package _s
  */
 
-$classnames[] = 'content-block carousel-block';
+$alignment    = _s_get_block_alignment( $block );
+$classes      = _s_get_block_classes( $block );
+$classnames[] = 'content-block carousel-block' . $alignment . $classes;
 $classnames[] = get_sub_field( 'block_width' );
+
+_s_acf_gutenberg_display_admin_default_carousel( $block );
 
 // Start repeater markup...
 if ( have_rows( 'carousel_slides' ) ) :
 	echo '<div class="' . esc_attr( implode( ' ', array_filter( $classnames ) ) ) . '">';
-
-	// Enqueue Slick carousel.
-	_s_enqueue_slick_scripts();
 
 	// Loop through slide slides.
 	while ( have_rows( 'carousel_slides' ) ) :
@@ -41,13 +42,14 @@ if ( have_rows( 'carousel_slides' ) ) :
 		// Start a <container> with possible block options.
 		_s_display_block_options(
 			array(
+				'block'     => $block,
 				'container' => 'section', // Any HTML5 container: section, div, etc...
 				'class'     => 'slide', // Container class.
 				'id'        => esc_attr( 'carousel-' . get_row_index() ),
 			)
 		);
 		?>
-			<div class="slide-content container <?php echo esc_attr( $classname ); ?>" data-animation="<?php echo esc_attr( _s_get_animation_class( array( 'options' => get_sub_field( 'animation' ) ) ) ); ?>">
+			<div class="slide-content container <?php echo esc_attr( $classname ); ?>">
 
 				<?php if ( $block_title ) : ?>
 					<h2 class="slide-title"><?php echo esc_html( $block_title ); ?></h2>
@@ -66,10 +68,10 @@ if ( have_rows( 'carousel_slides' ) ) :
 				);
 				?>
 
-			</div><!-- .slide-content -->
-		</section><!-- .slide -->
+			</div>
+		</section>
 
 <?php
 	endwhile;
-	echo '</div><!-- .carousel -->';
+	echo '</div>';
 endif;
