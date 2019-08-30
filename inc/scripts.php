@@ -74,8 +74,8 @@ function _s_scripts() {
 
 	// Register styles & scripts.
 	wp_register_style( '_s-google-font', _s_font_url(), array(), null ); // @codingStandardsIgnoreLine - required to avoid Google caching issues.
-	wp_register_style( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', null, '1.8.1' );
-	wp_register_script( 'slick-carousel', get_template_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick' . $suffix . '.js', array( 'jquery' ), '1.8.1', true );
+	wp_register_style( 'wds-carousel', get_template_directory_uri() . '/node_modules/tiny-slider/dist/tiny-slider.css', null, '2.9.2' );
+	wp_register_script( 'wds-carousel', get_template_directory_uri() . '/node_modules/tiny-slider/dist/min/tiny-slider.js', array( 'jquery' ), '2.9.2', true );
 
 	// Enqueue styles.
 	wp_enqueue_style( '_s-google-font' );
@@ -105,8 +105,8 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
  * @author Corey Collins
  */
 function _s_enqueue_slick_scripts() {
-	wp_enqueue_style( 'slick-carousel' );
-	wp_enqueue_script( 'slick-carousel' );
+	wp_enqueue_style( 'wds-carousel' );
+	wp_enqueue_script( 'wds-carousel' );
 }
 add_action( 'wp_enqueue_scripts', '_s_enqueue_slick_scripts' );
 
