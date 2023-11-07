@@ -4,30 +4,35 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_comments;
+use function WebDevStudios\wd_s\main_classes;
 
 get_header(); ?>
 
-	<div class="display-flex grid-wrapper">
-		<main id="main" class="site-main">
+	<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-				get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content', get_post_type() );
 
-				the_post_navigation();
+			echo wp_kses_post(
+				get_the_post_navigation(
+					[
+						'class' => 'is-layout-constrained',
+					]
+				)
+			);
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			print_comments();
 
-			endwhile; // End of the loop.
-			?>
+		endwhile; // End of the loop.
+		?>
 
-		</main><!-- #main -->
-	</div><!-- .grid-wrapper -->
+	</main><!-- #main -->
+
 <?php get_footer(); ?>

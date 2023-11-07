@@ -4,27 +4,34 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
+
+use function WebDevStudios\wd_s\print_post_date;
+use function WebDevStudios\wd_s\print_post_author;
+use function WebDevStudios\wd_s\print_entry_footer;
 
 ?>
 
-	<article <?php post_class(); ?>>
-		<header class="entry-header">
-			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article <?php post_class( 'has-global-padding' ); ?>>
 
-			<?php if ( 'post' === get_post_type() ) : ?>
+	<header class="entry-header is-layout-constrained">
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php _s_posted_on(); ?>
+				<?php print_post_date(); ?>
+				<?php print_post_author(); ?>
 			</div><!-- .entry-meta -->
-			<?php endif; ?>
-		</header><!-- .entry-header -->
+		<?php endif; ?>
+	</header><!-- .entry-header -->
 
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+	<div class="entry-summary is-layout-constrained">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
-		<footer class="entry-footer">
-			<?php _s_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
-	</article><!-- #post-## -->
+	<footer class="entry-footer is-layout-constrained">
+		<?php print_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->

@@ -9,47 +9,35 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package wd_s
  */
 
+use function WebDevStudios\wd_s\print_numeric_pagination;
+use function WebDevStudios\wd_s\main_classes;
+
 get_header(); ?>
-
-	<main id="main" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-		?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+	<div class="wp-site-blocks">
+		<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
 
 			<?php
+			if ( have_posts() ) :
+
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+				endwhile;
+
+				print_numeric_pagination();
+
+			else :
+				get_template_part( 'template-parts/content', 'none' );
 			endif;
+			?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-					* Include the Post-Format-specific template for the content.
-					* If you want to override this in a child theme, then include a file
-					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					*/
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			_s_display_numeric_pagination();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+		</main><!-- #main -->
+	</div><!-- .wp-site-blocks -->
 
 <?php get_footer(); ?>
