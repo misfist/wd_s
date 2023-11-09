@@ -14,7 +14,7 @@
 
     &.is-layout-flow {
         .wp-block-post {
-            @apply md:card-side;
+            @apply md:card-side border-[1rem] border-black rounded-none pb-0;
 
             &__body {
                 @apply card-body mt-0;
@@ -27,11 +27,14 @@
                 a {
                     @apply text-neutral-950 hover:underline focus:underline;
                 }
+            }
 
+            &__image {
+                @apply mb-0;
             }
 
             &__actions {
-                @apply card-actions self-end flex flex-wrap md:flex-nowrap w-full justify-between items-end;
+                @apply justify-center card-actions self-end flex flex-wrap md:flex-nowrap w-full sm:justify-between items-end;
 
                 &-course {
                     @apply mt-0;
