@@ -2,28 +2,28 @@
 /**
  * Limit the excerpt length.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Limit the excerpt length.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $args Parameters include length and more.
  *
  * @return string The excerpt.
  */
-function get_trimmed_excerpt( $args = [] ) {
+function get_trimmed_excerpt( $args = array() ) {
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'length' => 20,
 		'more'   => '...',
 		'post'   => '',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

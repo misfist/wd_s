@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
 ?>
@@ -19,24 +19,24 @@
 		<?php
 		echo wp_kses(
 			get_the_password_form(),
-			[
-				'p'     => [],
-				'label' => [
-					'for' => [],
-				],
-				'form'  => [
-					'action' => [],
-					'class'  => [],
-					'method' => [],
-				],
-				'input' => [
-					'id'    => [],
-					'name'  => [],
-					'size'  => [],
-					'type'  => [],
-					'value' => [],
-				],
-			]
+			array(
+				'p'     => array(),
+				'label' => array(
+					'for' => array(),
+				),
+				'form'  => array(
+					'action' => array(),
+					'class'  => array(),
+					'method' => array(),
+				),
+				'input' => array(
+					'id'    => array(),
+					'name'  => array(),
+					'size'  => array(),
+					'type'  => array(),
+					'value' => array(),
+				),
+			)
 		);
 		?>
 	</div><!-- .entry-content -->

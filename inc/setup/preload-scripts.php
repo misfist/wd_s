@@ -2,15 +2,15 @@
 /**
  * Preload styles and scripts.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Preload styles and scripts.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function preload_scripts() {
 	$asset_file_path = dirname( __DIR__ ) . '/build/index.asset.php';
@@ -18,10 +18,10 @@ function preload_scripts() {
 	if ( is_readable( $asset_file_path ) ) {
 		$asset_file = include $asset_file_path;
 	} else {
-		$asset_file = [
+		$asset_file = array(
 			'version'      => '1.0.0',
-			'dependencies' => [ 'wp-polyfill' ],
-		];
+			'dependencies' => array( 'wp-polyfill' ),
+		);
 	}
 
 	?>

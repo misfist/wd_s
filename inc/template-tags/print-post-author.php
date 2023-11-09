@@ -4,24 +4,24 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Prints HTML with author information for the current post.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $args Configuration args.
  */
-function print_post_author( $args = [] ) {
+function print_post_author( $args = array() ) {
 
 	// Set defaults.
-	$defaults = [
-		'author_text' => esc_html__( 'by', 'wd_s' ),
-	];
+	$defaults = array(
+		'author_text' => esc_html__( 'by', 'redkeyclub' ),
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

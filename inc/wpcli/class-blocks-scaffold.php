@@ -2,13 +2,13 @@
 /**
  * Add a CLI command for scaffolding a block.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 use WP_CLI;
-use const WebDevStudios\wd_s\ROOT_PATH;
+use const Red_Key_Club\ROOT_PATH;
 
 // Exit if class already exists (for example when the plugin `WDS ACF Blocks` is active).
 if ( class_exists( 'Blocks_Scaffold' ) ) {
@@ -18,7 +18,7 @@ if ( class_exists( 'Blocks_Scaffold' ) ) {
 /**
  * Class Blocks_Scaffold
  *
- * @package WebDevStudios\wd_s
+ * @package Red_Key_Club
  */
 class Blocks_Scaffold {
 
@@ -50,7 +50,7 @@ class Blocks_Scaffold {
 	 *
 	 * [--namespace=<blocknamespace>]
 	 * : Block Namespace.
-	 * : Default: WebDevStudios\wd_s
+	 * : Default: Red_Key_Club
 	 *
 	 * ## EXAMPLES
 	 *
@@ -74,13 +74,13 @@ class Blocks_Scaffold {
 		// Merge with default args.
 		$args = wp_parse_args(
 			$assoc_args,
-			[
+			array(
 				'title'     => ucfirst( $this->name ),
 				'desc'      => '',
 				'keywords'  => strtolower( $this->name ),
 				'icon'      => 'table-row-before',
-				'namespace' => 'wds/',
-			]
+				'namespace' => 'redkeyclub',
+			)
 		);
 
 		// create the directory.
@@ -118,7 +118,7 @@ class Blocks_Scaffold {
 	/**
 	 * Create the block directory.
 	 *
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+	 * @author Biplav Subedi <biplav.subedi@misfist.com>
 	 * @since 2.0.0
 	 */
 	private function create_block_dir() {
@@ -136,7 +136,7 @@ class Blocks_Scaffold {
 	 *
 	 * @param array $args Block details.
 	 * @since 2.0.0
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+	 * @author Biplav Subedi <biplav.subedi@misfist.com>
 	 */
 	private function create_block_render_php( $args ) {
 		$local_file = ROOT_PATH . 'inc/wpcli/block-starter/block.php';
@@ -158,7 +158,7 @@ class Blocks_Scaffold {
 	 *
 	 * @param array $args Block details.
 	 * @since 2.0.0
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+	 * @author Biplav Subedi <biplav.subedi@misfist.com>
 	 */
 	private function create_block_json( $args ) {
 		$local_file = ROOT_PATH . 'inc/wpcli/block-starter/block.json';
@@ -167,22 +167,22 @@ class Blocks_Scaffold {
 		if ( $this->init_filesystem()->exists( $local_file ) ) {
 			$content = $this->init_filesystem()->get_contents( $local_file );
 			$content = str_replace(
-				[
+				array(
 					'{{name}}',
 					'{{title}}',
 					'{{description}}',
 					'{{icon}}',
-					'wds/',
+					'redkeyclub',
 					'{{keyword}}',
-				],
-				[
+				),
+				array(
 					$this->name,
 					$args['title'],
 					$args['desc'],
 					$args['icon'],
 					trailingslashit( $args['namespace'] ),
 					$args['keyword'],
-				],
+				),
 				$content
 			);
 		}
@@ -196,7 +196,7 @@ class Blocks_Scaffold {
 	 * Create the block editor assets.
 	 *
 	 * @since 2.0.0
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+	 * @author Biplav Subedi <biplav.subedi@misfist.com>
 	 */
 	private function create_block_editor_assets() {
 		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/editor.js';
@@ -241,7 +241,7 @@ class Blocks_Scaffold {
 	 * Create the block main styles.
 	 *
 	 * @since 2.0.0
-	 * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+	 * @author Biplav Subedi <biplav.subedi@misfist.com>
 	 */
 	private function create_block_assets() {
 		$asset_js  = ROOT_PATH . 'inc/wpcli/block-starter/script.js';

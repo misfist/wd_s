@@ -43,7 +43,7 @@
 	} );
 
 	// Copyright text.
-	api( 'wd_s_copyright_text', function ( value ) {
+	api( 'redkeyclub_copyright_text', function ( value ) {
 		value.bind( function ( to ) {
 			$( '.site-info' ).text( to );
 		} );

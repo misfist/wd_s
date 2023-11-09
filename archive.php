@@ -4,15 +4,15 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-use function WebDevStudios\wd_s\print_numeric_pagination;
-use function WebDevStudios\wd_s\main_classes;
+use function Red_Key_Club\print_numeric_pagination;
+use function Red_Key_Club\main_classes;
 
 get_header(); ?>
 
-<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
+<main id="main" class="<?php echo esc_attr( main_classes( array() ) ); ?>">
 
 	<?php if ( have_posts() ) : ?>
 

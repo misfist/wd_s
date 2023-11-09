@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-use function WebDevStudios\wd_s\print_comments;
-use function WebDevStudios\wd_s\main_classes;
+use function Red_Key_Club\print_comments;
+use function Red_Key_Club\main_classes;
 
 get_header(); ?>
 
-	<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
+	<main id="main" class="<?php echo esc_attr( main_classes( array() ) ); ?>">
 
 		<?php
 		while ( have_posts() ) :
@@ -22,9 +22,9 @@ get_header(); ?>
 
 			echo wp_kses_post(
 				get_the_post_navigation(
-					[
+					array(
 						'class' => 'is-layout-constrained',
-					]
+					)
 				)
 			);
 

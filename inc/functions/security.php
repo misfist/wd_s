@@ -4,15 +4,15 @@
  *
  * Enable or disable certain functionality to harden WordPress.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Remove generator meta tags.
  *
- * @author WebDevStudios
+ * @author Misfist
  * @see https://developer.wordpress.org/reference/functions/the_generator/
  */
 add_filter( 'the_generator', '__return_false' );
@@ -20,7 +20,7 @@ add_filter( 'the_generator', '__return_false' );
 /**
  * Disable XML RPC.
  *
- * @author WebDevStudios
+ * @author Misfist
  * @see https://developer.wordpress.org/reference/hooks/xmlrpc_enabled/
  */
 add_filter( 'xmlrpc_enabled', '__return_false' );
@@ -28,7 +28,7 @@ add_filter( 'xmlrpc_enabled', '__return_false' );
 /**
  * Change REST-API header from "null" to "*".
  *
- * @author WebDevStudios
+ * @author Misfist
  * @see https://w3c.github.io/webappsec-cors-for-developers/#avoid-returning-access-control-allow-origin-null
  */
 function cors_control() {

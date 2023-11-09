@@ -1,0 +1,7 @@
+.wp-block-post {
+    .wp-block-post-author {
+        &__byline {
+            @apply text-sm;
+        }
+    }
+}

@@ -2,10 +2,10 @@
 /**
  * Display the customizer header scripts.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Display the customizer header scripts.
@@ -16,7 +16,7 @@ namespace WebDevStudios\wd_s;
  */
 function print_customizer_header_scripts() {
 	// Check for header scripts.
-	$scripts = get_theme_mod( 'wd_s_header_scripts' );
+	$scripts = get_theme_mod( 'redkeyclub_header_scripts' );
 
 	// None? Bail...
 	if ( ! $scripts ) {

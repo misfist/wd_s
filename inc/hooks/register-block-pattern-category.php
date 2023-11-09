@@ -2,10 +2,10 @@
 /**
  * Registers custom block pattern categories for the WD_S theme.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Registers custom block pattern categories for the WD_S theme.
@@ -14,9 +14,9 @@ function register_custom_block_pattern_category() {
 
 	register_block_pattern_category(
 		'wds-patterns',
-		[
-			'label' => __( 'WDS Patterns', 'wd_s' ),
-		]
+		array(
+			'label' => __( 'WDS Patterns', 'redkeyclub' ),
+		)
 	);
 
 	// Remove default patterns.

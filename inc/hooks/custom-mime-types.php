@@ -2,15 +2,15 @@
 /**
  * Enable custom mime types.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Enable custom mime types.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $mimes Current allowed mime types.
  *

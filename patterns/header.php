@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Header - Default
- * Slug: wds/header-default
+ * Slug: redkeyclub/header-default
  * Categories: header
  * Block Types: core/template-part/header
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
 // Determine whether to display site logo or site title.

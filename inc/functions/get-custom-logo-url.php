@@ -2,10 +2,10 @@
 /**
  * Retrieve the URL of the custom logo uploaded, if one exists.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Retrieve the URL of the custom logo uploaded, if one exists.

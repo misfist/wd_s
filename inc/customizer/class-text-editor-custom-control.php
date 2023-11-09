@@ -2,10 +2,10 @@
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return;
@@ -26,7 +26,7 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	/**
 	 * Render the content on the theme customizer page
 	 *
-	 * @author WebDevStudios
+	 * @author Misfist
 	 */
 	public function render_content() {
 		?>
@@ -37,11 +37,11 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 		<div class="wds-customize-text-editor">
 			<?php
 			// Setttings for the editor.
-			$settings = [
+			$settings = array(
 				'textarea_name' => $this->id,
 				'textarea_rows' => 4,
 				'media_buttons' => true,
-			];
+			);
 
 			// Add the editor.
 			wp_editor( $this->value(), $this->id, $settings );
@@ -61,19 +61,19 @@ final class Text_Editor_Custom_Control extends \WP_Customize_Control {
 	/**
 	 * Enqueue scripts.
 	 *
-	 * @author WebDevStudios
+	 * @author Misfist
 	 */
 	protected function enqueue_scripts() {
 		wp_enqueue_script( 'tiny_mce' );
-		wp_enqueue_script( 'wd_s-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', [ 'jquery' ], '1.0.0', true );
+		wp_enqueue_script( 'redkeyclub-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', array( 'jquery' ), '1.0.0', true );
 	}
 
 	/**
 	 * Add footer scripts for Tinymce.
 	 *
-	 * @author WebDevStudios
+	 * @author Misfist
 	 */
 	protected function add_footer_scripts() {
-		do_action( 'wd_s_admin_print_footer_scripts' );
+		do_action( 'redkeyclub_admin_print_footer_scripts' );
 	}
 }

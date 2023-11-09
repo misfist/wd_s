@@ -1,25 +1,25 @@
 <?php
 /**
- * WDS wd_s functions and definitions.
+ * WDS redkeyclub functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 // Define a global path and url.
-define( 'WebDevStudios\wd_s\ROOT_PATH', trailingslashit( get_template_directory() ) );
-define( 'WebDevStudios\wd_s\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
+define( 'Red_Key_Club\ROOT_PATH', trailingslashit( get_template_directory() ) );
+define( 'Red_Key_Club\ROOT_URL', trailingslashit( get_template_directory_uri() ) );
 
 /**
  * Get all the include files for the theme.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function include_inc_files() {
-	$files = [
+	$files = array(
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/functions/', // Custom functions that act independently of the theme templates.
 		'inc/hooks/', // Load custom filters and hooks.
@@ -28,7 +28,7 @@ function include_inc_files() {
 		'inc/shortcodes/', // Load shortcodes.
 		'inc/template-tags/', // Custom template tags for this theme.
 		'inc/wpcli/',
-	];
+	);
 
 	foreach ( $files as $include ) {
 		$include = trailingslashit( get_template_directory() ) . $include;

@@ -2,10 +2,10 @@
 /**
  * Set up the theme customizer.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Removes default customizer fields that we generally don't use.
@@ -26,7 +26,7 @@ add_action( 'customize_register', __NAMESPACE__ . '\remove_default_customizer_se
 /**
  * Include other customizer files.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function include_custom_controls() {
 	require get_template_directory() . '/inc/customizer/panels.php';
@@ -39,10 +39,10 @@ add_action( 'customize_register', __NAMESPACE__ . '\include_custom_controls', -9
 /**
  * Enqueue customizer related scripts.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function customize_scripts() {
-	wp_enqueue_script( 'wd_s-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', [ 'jquery', 'customize-preview' ], '1.0.0', true );
+	wp_enqueue_script( 'redkeyclub-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', array( 'jquery', 'customize-preview' ), '1.0.0', true );
 }
 add_action( 'customize_preview_init', __NAMESPACE__ . '\customize_scripts' );
 
@@ -51,21 +51,21 @@ add_action( 'customize_preview_init', __NAMESPACE__ . '\customize_scripts' );
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  *
- * @author WebDevStudios
+ * @author Misfist
  * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/.
  */
 function selective_refresh_support( $wp_customize ) {
 
 	// The <div> classname to append edit icon too.
-	$settings = [
-		'blogname'            => '.site-title a',
-		'blogdescription'     => '.site-description',
-		'wd_s_copyright_text' => '.site-info',
-	];
+	$settings = array(
+		'blogname'                  => '.site-title a',
+		'blogdescription'           => '.site-description',
+		'redkeyclub_copyright_text' => '.site-info',
+	);
 
 	// Loop through, and add selector partials.
 	foreach ( (array) $settings as $setting => $selector ) {
-		$args = [ 'selector' => $selector ];
+		$args = array( 'selector' => $selector );
 		$wp_customize->selective_refresh->add_partial( $setting, $args );
 	}
 }
@@ -76,7 +76,7 @@ add_action( 'customize_register', __NAMESPACE__ . '\selective_refresh_support' )
  *
  * Note: You will need to hook this up via livepreview.js
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29.
@@ -84,12 +84,12 @@ add_action( 'customize_register', __NAMESPACE__ . '\selective_refresh_support' )
 function live_preview_support( $wp_customize ) {
 
 	// Settings to apply live preview to.
-	$settings = [
+	$settings = array(
 		'blogname',
 		'blogdescription',
 		'header_textcolor',
-		'wd_s_copyright_text',
-	];
+		'redkeyclub_copyright_text',
+	);
 
 	// Loop through and add the live preview to each setting.
 	foreach ( (array) $settings as $setting_name ) {

@@ -2,33 +2,33 @@
 /**
  * Return SVG markup.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Return SVG markup.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $args The parameters needed to display the SVG.
  *
  * @return string Error string or SVG markup.
  */
-function get_svg( $args = [] ) {
+function get_svg( $args = array() ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_attr__( 'Please define default parameters in the form of an array.', 'wd_s' );
+		return esc_attr__( 'Please define default parameters in the form of an array.', 'redkeyclub' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_attr__( 'Please define an SVG icon filename.', 'wd_s' );
+		return esc_attr__( 'Please define an SVG icon filename.', 'redkeyclub' );
 	}
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'color'        => '',
 		'icon'         => '',
 		'title'        => '',
@@ -36,7 +36,7 @@ function get_svg( $args = [] ) {
 		'stroke-width' => '',
 		'height'       => '',
 		'width'        => '',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

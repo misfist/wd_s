@@ -1,16 +1,16 @@
 <?php
 /**
- * Flush out the transients used in wd_s_categorized_blog.
+ * Flush out the transients used in redkeyclub_categorized_blog.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
- * Flush out the transients used in wd_s_categorized_blog.
+ * Flush out the transients used in redkeyclub_categorized_blog.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @return bool Whether or not transients were deleted.
  */
@@ -20,7 +20,7 @@ function category_transient_flusher() {
 	}
 
 	// Like, beat it. Dig?
-	return delete_transient( 'wd_s_categories' );
+	return delete_transient( 'redkeyclub_categories' );
 }
 
 add_action( 'delete_category', __NAMESPACE__ . '\category_transient_flusher' );

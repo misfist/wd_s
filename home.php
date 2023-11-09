@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#home-page-display
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-use function WebDevStudios\wd_s\print_numeric_pagination;
-use function WebDevStudios\wd_s\main_classes;
+use function Red_Key_Club\print_numeric_pagination;
+use function Red_Key_Club\main_classes;
 
 get_header(); ?>
 	<div class="wp-site-blocks">
-		<main id="main" class="<?php echo esc_attr( main_classes( [] ) ); ?>">
+		<main id="main" class="<?php echo esc_attr( main_classes( array() ) ); ?>">
 
 			<?php if ( have_posts() ) : ?>
 					<header class="entry-header is-layout-constrained has-global-padding">

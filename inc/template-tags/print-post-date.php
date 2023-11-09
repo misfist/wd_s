@@ -4,25 +4,25 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Prints HTML with date information for the current post.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $args Configuration args.
  */
-function print_post_date( $args = [] ) {
+function print_post_date( $args = array() ) {
 
 	// Set defaults.
-	$defaults = [
-		'date_text'   => esc_html__( 'Posted on', 'wd_s' ),
+	$defaults = array(
+		'date_text'   => esc_html__( 'Posted on', 'redkeyclub' ),
 		'date_format' => get_option( 'date_format' ),
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

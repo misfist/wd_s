@@ -2,15 +2,15 @@
 /**
  * Display the comments if the count is more than 0.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Display the comments if the count is more than 0.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function print_comments() {
 	if ( comments_open() || get_comments_number() ) {

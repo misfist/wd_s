@@ -2,16 +2,16 @@
 /**
  * Display post taxonomies template function.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Print the taxonomies associated with a post.
  *
  * @param int $post_id The ID of the post.
- * @author WebDevStudios
+ * @author Misfist
  */
 function print_post_taxonomies( $post_id ) {
 	$post_taxonomies = get_post_taxonomies( $post_id );

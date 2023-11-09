@@ -2,10 +2,10 @@
 /**
  * Preload assets.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Preload assets.

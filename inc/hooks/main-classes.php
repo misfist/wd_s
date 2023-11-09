@@ -2,15 +2,15 @@
 /**
  * Adds custom classes to apply to <main>
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Adds custom classes to apply to <main>
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $new_classes Classes for the <main> element.
  *
@@ -18,13 +18,13 @@ namespace WebDevStudios\wd_s;
  */
 function main_classes( $new_classes ) {
 
-	$classes = [ 'site-main' ];
+	$classes = array( 'site-main' );
 
 	if ( ! empty( $new_classes ) ) {
 		$classes = array_merge( $classes, $new_classes );
 	}
 
-	$classes = apply_filters( 'wd_s_main_classes', $classes );
+	$classes = apply_filters( 'redkeyclub_main_classes', $classes );
 
 	return implode( ' ', $classes );
 }

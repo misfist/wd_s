@@ -2,10 +2,10 @@
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -14,17 +14,17 @@ namespace WebDevStudios\wd_s;
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @author WebDevStudios
+ * @author Misfist
  */
 function setup() {
 	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on wd_s, refer to the
+	 * If you're building a theme based on redkeyclub, refer to the
 	 * README.md file in this theme to find and replace all
-	 * references of wd_s
+	 * references of redkeyclub
 	 */
-	load_theme_textdomain( 'wd_s', get_template_directory() . '/build/languages' );
+	load_theme_textdomain( 'redkeyclub', get_template_directory() . '/build/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,9 +47,10 @@ function setup() {
 
 	// Register navigation menus.
 	register_nav_menus(
-		[
-			'primary' => esc_html__( 'Primary Menu', 'wd_s' ),
-		]
+		array(
+			'primary' => esc_html__( 'Primary Menu', 'redkeyclub' ),
+			'footer'  => esc_html__( 'Footer Menu', 'redkeyclub' ),
+		)
 	);
 
 	/**
@@ -58,25 +59,25 @@ function setup() {
 	 */
 	add_theme_support(
 		'html5',
-		[
+		array(
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		]
+		)
 	);
 
 	// Custom logo support.
 	add_theme_support(
 		'custom-logo',
-		[
+		array(
 			'height'      => 250,
 			'width'       => 500,
 			'flex-height' => true,
 			'flex-width'  => true,
-			'header-text' => [ 'site-title', 'site-description' ],
-		]
+			'header-text' => array( 'site-title', 'site-description' ),
+		)
 	);
 
 	// Add theme support for selective refresh for widgets.

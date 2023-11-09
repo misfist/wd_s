@@ -2,26 +2,26 @@
 /**
  * Trim the title length.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Trim the title length.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $args Parameters include length and more.
  *
  * @return string The title.
  */
-function get_trimmed_title( $args = [] ) {
+function get_trimmed_title( $args = array() ) {
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'length' => 12,
 		'more'   => '...',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );

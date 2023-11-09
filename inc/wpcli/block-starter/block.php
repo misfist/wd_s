@@ -2,11 +2,11 @@
 /**
  * Your block render code goes here.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
 // Add classes to block.
-$wds_classes = [];
+$wds_classes = array();
 if ( ! empty( $block['className'] ) ) {
 	$wds_classes[] = $block['className'];
 }

@@ -2,15 +2,15 @@
 /**
  * Get an attachment ID from it's URL.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Get an attachment ID from it's URL.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param string $attachment_url The URL of the attachment.
  *

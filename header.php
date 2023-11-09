@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 	<?php
 	wp_head();
-	use function WebDevStudios\wd_s\print_header_block;
+	use function Red_Key_Club\print_header_block;
 	?>
 
 </head>

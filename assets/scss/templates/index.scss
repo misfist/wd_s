@@ -3,3 +3,10 @@
 // Import partials for WordPress templates and template parts.
 // See https://developer.wordpress.org/themes/basics/template-files/.
 //----------------------------------------
+
+@import './posts';
+@import './courses';
+@import './forum';
+@import './post';
+@import './course';
+@import './front-page';

@@ -2,10 +2,10 @@
 /**
  * Inline Critical CSS.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Inline Critical CSS.

@@ -4,12 +4,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-use function WebDevStudios\wd_s\print_post_date;
-use function WebDevStudios\wd_s\print_post_author;
-use function WebDevStudios\wd_s\print_entry_footer;
+use function Red_Key_Club\print_post_date;
+use function Red_Key_Club\print_post_author;
+use function Red_Key_Club\print_entry_footer;
 
 ?>
 

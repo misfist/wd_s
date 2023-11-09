@@ -2,26 +2,26 @@
 /**
  * Register custom block category(ies).
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Register_wds_category
  *
  * @param array $categories block categories.
  * @return array $categories block categories.
- * @author Inna Gutnik <inna.Gutnik@webdevstudios.com>
+ * @author Inna Gutnik <inna.Gutnik@misfist.com>
  * @since  2023-05-30
  */
 function register_wds_category( $categories ) {
-	$custom_block_category = [
-		'slug'  => __( 'wds-blocks-category', 'wd_s' ),
-		'title' => __( 'WDS Blocks', 'wd_s' ),
-	];
+	$custom_block_category = array(
+		'slug'  => __( 'wds-blocks-category', 'redkeyclub' ),
+		'title' => __( 'WDS Blocks', 'redkeyclub' ),
+	);
 
-	$categories_sorted    = [];
+	$categories_sorted    = array();
 	$categories_sorted[0] = $custom_block_category;
 
 	foreach ( $categories as $category ) {

@@ -2,10 +2,10 @@
 /**
  * Removes or Adjusts the prefix on category archive page titles.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Removes or Adjusts the prefix on category archive page titles.

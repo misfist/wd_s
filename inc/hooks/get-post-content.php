@@ -2,10 +2,10 @@
 /**
  * Filters WYSIWYG content with the_content filter.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Filters WYSIWYG content with the_content filter.

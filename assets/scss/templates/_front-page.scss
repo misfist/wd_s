@@ -1,0 +1,41 @@
+.home {
+    .page-header {
+        @apply hidden;
+    }
+
+    .membership-tiers {
+        .wp-block-column {
+            @apply p-4 flex flex-col justify-between;
+        }
+
+        &.has-white-color {
+            .wp-block-heading {
+                @apply text-white;
+            }
+        }
+
+        .wp-block-separator {
+            @apply my-4;
+        }
+
+        li {
+            @apply mb-1.5 last:mb-0 leading-snug;
+        }
+
+        .tier {
+            @apply text-base;
+        }
+
+        .price {
+            @apply text-3xl;
+        }
+
+        .card-actions {
+            @apply self-center;
+        }
+    }
+
+    .is-style-hard-shadow {
+        @apply border border-black shadow-hard-shadow;
+    }
+}

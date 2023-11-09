@@ -2,15 +2,15 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 /**
  * Adds custom classes to the array of body classes.
  *
- * @author WebDevStudios
+ * @author Misfist
  *
  * @param array $classes Classes for the body element.
  *

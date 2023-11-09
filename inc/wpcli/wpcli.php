@@ -2,19 +2,19 @@
 /**
  * Set up wp-cli.
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-namespace WebDevStudios\wd_s;
+namespace Red_Key_Club;
 
 use WP_CLI;
-use const WebDevStudios\wd_s\ROOT_PATH;
+use const Red_Key_Club\ROOT_PATH;
 
 /**
  * Registers our command when cli get's initialized.
  *
  * @since  4.0.0
- * @author Biplav Subedi <biplav.subedi@webdevstudios.com>
+ * @author Biplav Subedi <biplav.subedi@misfist.com>
  * @return void
  */
 function cli_register_commands() {

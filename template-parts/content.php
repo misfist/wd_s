@@ -4,13 +4,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wd_s
+ * @package redkeyclub
  */
 
-use function WebDevStudios\wd_s\print_post_date;
-use function WebDevStudios\wd_s\print_post_author;
-use function WebDevStudios\wd_s\print_entry_footer;
-use function WebDevStudios\wd_s\print_post_taxonomies;
+use function Red_Key_Club\print_post_date;
+use function Red_Key_Club\print_post_author;
+use function Red_Key_Club\print_entry_footer;
+use function Red_Key_Club\print_post_taxonomies;
 ?>
 
 <article <?php post_class( 'post-container' ); ?>>
@@ -31,12 +31,12 @@ use function WebDevStudios\wd_s\print_post_taxonomies;
 				<?php
 				// Use the print_post_taxonomies template tag - set up the optional args.
 				print_post_taxonomies(
-					[
+					array(
 						'post_id'      => $post->ID,
 						'in_list'      => 0,
 						'primary_only' => true,
 						'linked'       => false,
-					]
+					)
 				);
 				?>
 			</div><!-- .entry-meta -->
@@ -49,22 +49,22 @@ use function WebDevStudios\wd_s\print_post_taxonomies;
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. */
-					esc_html__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'wd_s' ),
-					[
-						'span' => [
-							'class' => [],
-						],
-					]
+					esc_html__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'redkeyclub' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
 				),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			)
 		);
 
 		wp_link_pages(
-			[
-				'before' => '<div class="page-links is-layout-constrained has-global-padding">' . esc_attr__( 'Pages:', 'wd_s' ),
+			array(
+				'before' => '<div class="page-links is-layout-constrained has-global-padding">' . esc_attr__( 'Pages:', 'redkeyclub' ),
 				'after'  => '</div>',
-			]
+			)
 		);
 		?>
 	</div><!-- .entry-content -->
