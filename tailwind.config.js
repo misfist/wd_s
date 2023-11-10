@@ -39,7 +39,7 @@ module.exports = {
 	content: topLevelPhpFiles.concat( directoryFiles ),
 	theme: {
 		fontFamily: {
-			headline: [ 'Lato', 'sans-serif' ],
+			headline: [ 'Dosis', 'sans-serif' ],
 			subheading: [ 'Lora', 'serif' ],
 			body: [ 'Nunito', 'sans-serif' ],
 			mono: [ 'Oxygen Mono', 'monospace' ],
@@ -69,6 +69,9 @@ module.exports = {
 				},
 			},
 		],
+		base: false,
+		styled: true,
+		utils: true,
 	},
 	plugins: [
 		require( '@tailwindcss/forms' ),

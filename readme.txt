@@ -34,3 +34,10 @@ Copyright (c) 2011-2011 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) w
 License URL: http://scripts.sil.org/OFL 
 Source: http://www.typoland.com/
 -- End of Lato Font credits --
+
+Dosis Font
+Copyright 2011 The Dosis Project Authors (https://github.com/googlefonts/dosis-vf) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: http://www.impallari.com
+-- End of Dosis Font credits --

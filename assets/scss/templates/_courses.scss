@@ -2,6 +2,7 @@
 
     .wp-block-post {
         @apply card;
+        @apply rounded-none;
 
         .wp-block-post-featured-image {
             @apply min-w-full aspect-square md:aspect-auto md:min-w-[300px] md:max-w-[300px];
@@ -14,7 +15,7 @@
 
     &.is-layout-flow {
         .wp-block-post {
-            @apply md:card-side border-[1rem] border-black rounded-none pb-0;
+            @apply md:card-side border-[2rem] border-black rounded-none pb-0;
 
             &__body {
                 @apply card-body mt-0;
@@ -55,13 +56,13 @@
                 }
 
                 &__byline {
-                    @apply mb-0;
+                    @apply pb-0;
                 }
             }
 
             .sensei-progress-bar {
                 &__label {
-
+                    @apply text-sm;
                 }
             }
         }

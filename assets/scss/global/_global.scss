@@ -10,7 +10,7 @@
 }
 
 html {
-	scroll-behavior: smooth;
+	@apply scroll-smooth min-h-screen leading-snug;
 }
 
 pre {
@@ -19,4 +19,25 @@ pre {
 
 .post-container {
 	@apply mb-6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.wp-block-heading {
+	@apply leading-tight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+.wp-site-blocks {
+	@apply mt-16;
 }

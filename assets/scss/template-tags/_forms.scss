@@ -3,8 +3,9 @@
 
 [type='reset'],
 [type='submit'],
-.wp-block-button__link {
-	@apply bg-tertiary-200 text-white text-base;
+.wp-block-button__link,
+.pmpro_btn {
+	@apply bg-tertiary-300 uppercase font-headline text-white rounded-none border-0 text-base;
 }
 
 
